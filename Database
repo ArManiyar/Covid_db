@@ -1,0 +1,50 @@
+// Create a database called covid_19
+// and under that create two table Covid and Contacts
+create table covid(pt_id int,
+  pt_name varchar(25), 
+  pt_hosname varchar(30), 
+  pt_age int(2), 
+  pt_bg varchar(5), 
+  pt_gender varchar(7), 
+  pt_adhar_number int(12), 
+  pt_admitdate varchar(15), 
+  pt_dise_date varchar(15), 
+  pt_report varchar(25), 
+  pt_addr varchar(30)
+);
+
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| pt_id           | int         | YES  |     | NULL    |       |
+| pt_name         | varchar(25) | YES  |     | NULL    |       |
+| pt_hosname      | varchar(30) | YES  |     | NULL    |       |
+| pt_age          | int         | YES  |     | NULL    |       |
+| pt_bg           | varchar(5)  | YES  |     | NULL    |       |
+| pt_gender       | varchar(7)  | YES  |     | NULL    |       |
+| pt_adhar_number | int         | YES  |     | NULL    |       |
+| pt_admitdate    | varchar(15) | YES  |     | NULL    |       |
+| pt_dise_date    | varchar(15) | YES  |     | NULL    |       |
+| pt_report       | varchar(25) | YES  |     | NULL    |       |
+| pt_addr         | varchar(30) | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+
+// Create a new table under Covid_19 db
+
+ Create table contacts(
+  pt_id int, 
+  Primary_Contact varchar(20), 
+  Secondary_Contact varchar(20), 
+  Tertiary_Contact varchar(20), 
+  FOREIGN KEY(pt_id) REFERENCES covid(pt_id)
+  );
+  
+  +-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| pt_id             | int         | YES  | MUL | NULL    |       |
+| Primary_Contact   | varchar(20) | YES  |     | NULL    |       |
+| Secondary_Contact | varchar(20) | YES  |     | NULL    |       |
+| Tertiary_Contact  | varchar(20) | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
